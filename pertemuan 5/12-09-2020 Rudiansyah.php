@@ -1,7 +1,7 @@
 <?php  ?>
 
 <body>
-	<table border ="1">
+	<table border ="1" cellspacing="0" cellspacing="7">
 		<tr>
 			<td>No</td>
 			<td>Keterangan</td>
@@ -12,9 +12,9 @@
 			<td><?= $i; ?></td>
 			<td><?php 
 					if ($i % 2 ==0) {
-						echo "Genap";
+						echo "<p style='background-color: lightpink'>Genap</p>";
 					} else {
-						echo "Ganjl";
+						echo "<p style='background-color: lightyellow'>Ganjil</p>";
 					}
  			?></td>
 		</tr>
