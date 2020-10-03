@@ -40,6 +40,9 @@ if (isset($_POST['submit'])) {
 	
 }
 
+$rows = "SELECT * FROM registrasi";
+$row = mysqli_query($koneksi, $rows);
+
  ?>
 
 
@@ -147,25 +150,19 @@ if (isset($_POST['submit'])) {
 		<td>Email</td>
 		<td>Aksi</td>
 	</tr>
+	<?php $no = 1; ?>
+	<?php foreach ($row as $key) : ?>
 	<tr>
-		<td>1</td>
-		<td>M. Iqbal Adenan</td>
-		<td>Kuala Kapuas</td>
-		<td>17 Oktober 1992</td>
-		<td>085249099652</td>
-		<td>kumpultugas17@gmail.com</td>
+		<td><?= $no; ?></td>
+		<td><?= $key['nama']; ?></td>
+		<td><?= $key['tempat_lahir']; ?></td>
+		<td><?= $key['tanggal_lahir']; ?></td>
+		<td><?= $key['telp']; ?></td>
+		<td><?= $key['email']; ?></td>
 		<td><button>Edit</button> <button>Hapus</button></td>
-	</tr>
-		<tr>
-		<td>2</td>
-		<td>Agus Setiawan</td>
-		<td>Banjarmasin>
-		<td>17 Oktober 1992</td>
-		<td>087843969674</td>
-		<td>Agus@gmail.com</td>
-		<td><button>Edit</button> <button>Hapus</button></td>
-	</tr>
+<?php $no++; ?>
+<?php endforeach; ?>
 </table></center>
-	
+
 
 </body>
