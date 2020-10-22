@@ -27,16 +27,17 @@ if (isset($_POST['submit'])) {
 	$tema_pelatihan = $_POST['tema_pelatihan'];
 	$mitra_pelatihan = $_POST['mitra_pelatihan'];
 
-	//var_dump($nama, $tempat_lahir, $tanggal_lahir, $nik, $email, $telp, $telp_wali, $pekerjaan, $alamat, $program_akademi, $tema_pelatihan, $mitra_pelatihan);
 	$result = "INSERT INTO registrasi VALUES ('', '$nama', '$tempat_lahir', 'tanggal_lahir', '$nik', '$email', '$telp', 'telp_wali', '$pekerjaan', '$alamat', '$program_akademi', '$tema_pelatihan', '$mitra_pelatihan')";
 
-$sql = mysqli_query($koneksi, $result);
+	$sql = mysqli_query($koneksi, $result);
 
 	if ($sql) {
-		echo "<p style= 'color: green;'>Data berhasil ditambahkan!</p>";
+		echo "<script>alert('Data berhasil ditambahkan'),</script>";
 	} else {
-		echo "<p style= 'color: res;'>Data gagal ditambahkan!</p>";
+		echo "<script>alert('Data gagal ditambahkan'),</script>";
+
 	}
+	
 }
 
  ?>
@@ -72,41 +73,41 @@ $sql = mysqli_query($koneksi, $result);
 		<tr>
 			<td><label for="nama">Nama Lengkap (Sesuai KTP)</label></td>
 			<td>:</td>
-			<td><input type="text" name="nama" placeholder="Masukan Nama Lengkap" required></td>
+			<td><input type="text" name="nama" id="nama" placeholder="Masukan Nama Lengkap" required></td>
 		</tr>
 		<tr>
 			<td><label for="tempat_lahir">Tempat Lahir</label></td>
 			<td>:</td>
-			<td><input type="text" name="tempat_lahir" placeholder="Masukan Tempat Lahir" required></td>
+			<td><input type="text" name="tempat_lahir" id="tempat_lahir" placeholder="Masukan Tempat Lahir" required></td>
 		</tr>
 		<tr>
 			<td><label for="tanggal_lahir">Tanggal Lahir</label></td>
 			<td>:</td>
-			<td><input type="date" name= "tanggal_lahir" placeholder="Masukan Tanggal Lahir" required></td>
+			<td><input type="date" name= "tanggal_lahir" id="tanggal_lahir" placeholder="Masukan Tanggal Lahir" required></td>
 		</tr>
 		<tr>
 			<td><label for="nik">NIK/NIP</label></td>
 			<td>:</td>
-			<td><input type="text" name="nik" placeholder="Masukan Nomor NIK" required></td>
+			<td><input type="text" name="nik" id="nik" placeholder="Masukan Nomor NIK" required></td>
 		</tr>
 		<tr>
 			<td><label for="email">E-Mail Aktif</label></td>
 			<td>:</td>
-			<td><input type="text" name="email" placeholder="Masukan Alamat E-Mail" required></td>
+			<td><input type="text" name="email" id="email" placeholder="Masukan Alamat E-Mail" required></td>
 		<tr>
 			<td><label for="telp "><N>No. HP Aktif</N></label></td>
 			<td>:</td>
-			<td><input type="number" name="telp"  placeholder="Masukan Nomor HP" required></td>
+			<td><input type="number" name="telp " id="telp " placeholder="Masukan Nomor HP" required></td>
 		</tr>
 		<tr>
 			<td><label for="telp_wali">No HP (Wali/Atasan)</label></td>
 			<td>:</td>
-			<TD><input type="number" name="telp_wali" placeholder="Masukan Nomor HP Wali" required></td>
+			<TD><input type="number" name="telp_wali" id="no_wali" placeholder="Masukan Nomor HP Wali" required></td>
 		</tr>
 		<tr>
 			<td><label for="pekerjaan">Pekerjaan</label></td>
 			<td>:</TD>
-			<td><input type="text" name="pekerjaan" placeholder="Masukan Pekerjaan" required></td>
+			<td><input type="text" name="pekerjaan" id="pekerjaan" placeholder="Masukan Pekerjaan" required></td>
 		</tr>
 		<tr>
 			<td><label for="alamat">Alamat Domisili</label></td>
@@ -115,24 +116,19 @@ $sql = mysqli_query($koneksi, $result);
 		</tr>
 		<td><label for="program_akademi">Program Akademi</label></td>
 			<td>:</td>
-			<td><input type="text" name="program_akademi"  placeholder="Masukan Program Akademi"required></td>
+			<td><input type="text" name="program_akademi" id="program_akademi" placeholder="Masukan Program Akademi"required></td>
 		</tr>
 		</tr>
 		<td><label for="tema">Tema Pelatihan</label></td>
 			<td>:</td>
-			<td><input type="text" name="tema_pelatihan" placeholder="Masukan Tema Pelatihan" required></td>
+			<td><input type="text" name="tema_pelatihan" id="tema" placeholder="Masukan Tema Pelatihan" required></td>
 		</tr>
 		</tr>
 		<td><label for="mitra">Mitra Pelatihan<br></label></td>
 			<td>:</td>
-			<td><input type="text" name="mitra_pelatihan" id="mitra" placeholder="Masukan Mitra Pelatihan"><br></td>
+			<td><input type="text" name="mitra_pelatihan" id="mitra" placeholder="Masukan Mitra Pelatihan"><br>
+				<button type="submit" name="submit">Kirim</button> | <button type="button">Batal</button></td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td><button type="submit" name="submit">Kirim</button> | <button type="button">Batal</button></td>
-		</tr>
-		
 	</table>
 </form>
 
@@ -158,7 +154,7 @@ $sql = mysqli_query($koneksi, $result);
 		<tr>
 		<td>2</td>
 		<td>Agus Setiawan</td>
-		<td>Banjarmasin</td>
+		<td>Banjarmasin>
 		<td>17 Oktober 1992</td>
 		<td>087843969674</td>
 		<td>Agus@gmail.com</td>
