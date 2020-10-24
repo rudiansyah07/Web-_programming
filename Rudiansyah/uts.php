@@ -19,17 +19,17 @@
 if (isset($_POST['submit'])) {
 	$usia = $_POST['usia'];
 }
-if ($usia >= 0) {
+if ($usia > 0) {
 	$status = "Balita";
 }
-if ($usia >= 6) {
+if ($usia > 6) {
 	$status = "Anak-Anak";
 }
-if ($usia >= 17) {
+if ($usia > 17) {
 	$status = "Dewasa";
 }
 
-if ($usia >= 50) {
+if ($usia > 50) {
 	$status = "Tua";
 }
 echo "Status : ".$status. "<br>";
