@@ -31,7 +31,11 @@ $result =mysqli_query ($conn, "SELECT*FROM transaksi");
 		<br><br>
 
 		<label for="jenis_transaksi">jenis_transaksi</label>
-		<textarea name="jenis_transaksi" id="" cols="30" rows="3" id="jenis_transaksi"></textarea>
+		<select name="jenis_transaksi" cols="30" rows="3" id="jenis_transaksi" required>
+			<option disabled selected>Pilih Jenis Transaksi</option>
+			<option value="Debit">Debit</option>
+			<option value="Kredit">Kredit</option>
+		</select>
 		<br><br>
 
 		<label for="tanggal">Tanggal</label>
@@ -55,7 +59,7 @@ if (isset($_POST['submit'])) {
 	$tanggal = $_POST['tanggal'];
 	$jumlah = $_POST['jumlah'];
 
-$sql = "INSERT into transaksi VALUES ('', '$nama_nasbah', '$no_rekening','$no_transaksi', '$jenis_transaksi', '$tanggal', '$jumlah', '', '')";
+$sql = "INSERT into transaksi VALUES ('', '$nama_nasbah', '$no_rekening','$no_transaksi', '$jenis_transaksi', '$tanggal', '$jumlah')";
 
 	$query = mysqli_query($conn, $sql);
 
