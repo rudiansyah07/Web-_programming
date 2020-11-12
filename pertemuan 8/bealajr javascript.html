@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS-Alert</title>
+</head>
+<body>
+
+	<button onclick="alert('Selamat Datang')">alert</button>
+	<button onclick="confirm ('Data akan dihapus')">confirm</button>
+	<button onclick="prompt('Masukan Nama Anda!')">prompt</button>
+	<br>
+
+
+
+	<script>
+		//var yakin = confirm ('Data akan dihapus');
+		//if (yakin) {
+		//	alert('Data terhapus!')
+		//}
+		//alert('Selamat Datang')
+
+		//var nama = prompt('Masukan Nama Anda!');
+		//document.write('Hai, ' +nama);
+		//console.log('Hai, ' +nama);
+
+		var yakin = confirm('Mau menambahkan nama ?');
+		if (yakin) {
+			var nama = prompt('Masukan Nama Anda');
+			document.write('Hai, ' +nama);
+			console.log('Hai, ' + nama);
+		} else {
+			alert('Tidak memasukan nama!');
+		}
+	</script>
+
+
+</body>
+</html>
